@@ -202,3 +202,16 @@ def soybeans_ny_zsf2(webdriver):
 
     # retornando o endereço da tabela
     return tabela
+
+
+# Obtendo os dados históricos do trigo ny zwh2 
+def wheat_ny_zwh2(webdriver):
+
+    # Endereço dos dados históricos do rendimento do titulo americano - 2 anos 
+    link = 'https://br.investing.com/commodities/us-wheat-historical-data'
+
+    # baixando a tabela 
+    tabela = investing_table(link,webdriver)
+
+    # retornando o endereço da tabela
+    return tabela
