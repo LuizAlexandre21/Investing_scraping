@@ -154,3 +154,14 @@ def income_bonds_eua_30(webdriver):
 
     # retornando o endereço da tabela
     return tabela
+
+def bull_future_lcz1(webdriver):
+
+    # Endereço dos dados históricos do rendimento do titulo americano - 2 anos 
+    link = 'https://br.investing.com/commodities/live-cattle-historical-data'
+
+    # baixando a tabela 
+    tabela = investing_table(link,webdriver)
+
+    # retornando o endereço da tabela
+    return tabela
