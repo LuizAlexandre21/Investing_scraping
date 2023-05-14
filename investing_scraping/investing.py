@@ -189,3 +189,16 @@ def iron_ore_cfr(webdriver):
 
     # retornando o endereço da tabela
     return tabela
+
+
+# Obtendo os dados históricos da soja ny zsf2
+def soybeans_ny_zsf2(webdriver):
+
+    # Endereço dos dados históricos do rendimento do titulo americano - 2 anos 
+    link = 'https://br.investing.com/commodities/us-soybeans-historical-data'
+
+    # baixando a tabela 
+    tabela = investing_table(link,webdriver)
+
+    # retornando o endereço da tabela
+    return tabela
