@@ -118,3 +118,15 @@ def income_bonds_eua_5(webdriver):
 
     # retornando o endereço da tabela
     return tabela
+
+# Obtendo os dados históricos do rendimento do titulo americano - 10 anos 
+def income_bonds_eua_10(webdriver):
+
+    # Endereço dos dados históricos do rendimento do titulo americano - 2 anos 
+    link = 'https://br.investing.com/rates-bonds/u.s.-10-year-bond-yield-historical-data'
+
+    # baixando a tabela 
+    tabela = investing_table(link,webdriver)
+
+    # retornando o endereço da tabela
+    return tabela
