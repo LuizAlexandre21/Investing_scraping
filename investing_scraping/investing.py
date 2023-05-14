@@ -165,3 +165,15 @@ def bull_future_lcz1(webdriver):
 
     # retornando o endereço da tabela
     return tabela
+
+# Obtendo os dados históricos do valor do boi gordo futuros BGIc1
+def bull_future_BGIc1(webdriver):
+
+    # Endereço dos dados históricos do rendimento do titulo americano - 2 anos 
+    link = 'https://br.investing.com/commodities/live-cattle-historical-data?cid=964528'
+
+    # baixando a tabela 
+    tabela = investing_table(link,webdriver)
+
+    # retornando o endereço da tabela
+    return tabela
