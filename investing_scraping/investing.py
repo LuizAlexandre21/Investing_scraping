@@ -45,3 +45,35 @@ def open_chrome(download_path:str):
     chrome = webdriver.Chrome('chrome/chromedriver',options=chrome_options)
 
     return chrome
+
+# Logando no site do investing 
+def investing_login(email:str,password:str):
+
+    # Abrindo o navegador 
+    navegador = open_chrome('/home/alexandre/Documents/ADECE/Investing/Data/')
+
+    # Acessando o site do investing 
+    navegador.get("https://br.investing.com/rates-bonds/u.s.-2-year-bond-yield-historical-data")
+
+    # Interromper o carregamento da pagina 
+    navegador.execute_script("window.stop();")
+
+    # Removendo a aba de cookies
+    navegador.find_element(By.XPATH,'/html/body/div[2]/div[2]/div/div[2]/button').click()
+
+    # Acessando a aba de login
+    navegador.find_element(By.XPATH,'//*[@id="__next"]/header/div[1]/section/div[3]/ul/li[1]/button').click()
+
+    # Acessando o login com conta do investing 
+    navegador.find_element(By.XPATH,'/html/body/div[3]/div/div[2]/div/form/button[3]').click()
+
+    # Inserindo o email 
+    navegador.find_element(By.XPATH,'/html/body/div[3]/div/div[2]/div/form/div[3]/input').send_keys(email)
+
+    # Inserindo a Senha 
+    navegador.find_element(By.XPATH,'/html/body/div[3]/div/div[2]/div/form/div[5]/input').send_keys(password)
+
+    # Logando a conta 
+    navegador.find_element(By.XPATH,'/html/body/div[3]/div/div[2]/div/form/button').click()
+
+    return navegador
