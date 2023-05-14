@@ -177,3 +177,15 @@ def bull_future_BGIc1(webdriver):
 
     # retornando o endereço da tabela
     return tabela
+
+# Obtendo os dados históricos de minério de ferro refinado 62_ Fe CFR 
+def iron_ore_cfr(webdriver):
+
+    # Endereço dos dados históricos do rendimento do titulo americano - 2 anos 
+    link = 'https://br.investing.com/commodities/iron-ore-62-cfr-futures-historical-data'
+
+    # baixando a tabela 
+    tabela = investing_table(link,webdriver)
+
+    # retornando o endereço da tabela
+    return tabela
