@@ -77,3 +77,19 @@ def investing_login(email:str,password:str):
     navegador.find_element(By.XPATH,'/html/body/div[3]/div/div[2]/div/form/button').click()
 
     return navegador
+
+# Obtendo as tabelas do investing.com
+def investing_table(html,webdriver):
+    # Acessando a pagina com os indicadores
+    webdriver.get(html)
+
+    # Baixando a tabela 
+    time.sleep(3)
+    webdriver.find_element(By.XPATH,'/html/body/div[1]/div[2]/div/div/div[2]/main/div/div[4]/div/div/div[2]/div[2]/div[1]').click()
+
+    # Extraindo o nome do arquivo 
+    time.sleep(3)
+    elemento = webdriver.find_element(By.XPATH,'/html/body/div[1]/div[2]/div/div/div[2]/main/div/div[4]/div/div/div[2]/div[2]/div[1]/a').get_attribute("download")
+
+    # Retornando o nome do arquivo 
+    return elemento 
